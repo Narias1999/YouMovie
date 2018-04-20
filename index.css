@@ -8,6 +8,7 @@
     --primary: #0097e6;
     --primary-text: #2f3640;
     --white-text: #f5f6fa;
+    --secondary: #c23616;
 }
 a {
     text-decoration: none;
@@ -23,6 +24,7 @@ header {
     padding: 0 60px;
     align-items: center;
     justify-content: space-between;
+    background: rgba(255,255,255,.6)
 }
 .logo {
     width: 300px;
@@ -58,8 +60,8 @@ nav>ul>li>a:hover {
 nav>ul>li>a.active {
     background: var(--primary);
     color: #fff;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    /* border-bottom-left-radius: 50px; */
+    /* border-bottom-right-radius: 50px; */
 }
 nav>ul>li>a>.icon {
     font-size: 35px;
@@ -89,4 +91,47 @@ footer .social-link {
     color: var(--white-text);
     font-size: 20px;
     margin: 0 5px;
+}
+.home {
+    width: 100%;
+    height: calc(100vh - 110px);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.slide-item {
+    height: 100%;
+}
+.home img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+    height: 100%;
+    object-fit: cover;
+}
+.slide-item>.info {
+    width: 450px;
+    color: var(--white-text);
+    margin-left: 60px;
+}
+.slide-item>.info h2 {
+    color: var(--secondary);
+    text-shadow: 2px 2px 1px #000000db; 
+    font-size: 30px;
+}
+.slide-item>.info>p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.btn {
+    box-shadow: 6px 5px 14px #000000b0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    background: var(--secondary);
+    color: var(--white-text);
+    border-radius: 2px;
 }

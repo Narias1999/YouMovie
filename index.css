@@ -138,7 +138,7 @@ footer .social-link {
     border-radius: 2px;
 }
 .btn:hover {
-    box-shadow: 2px 2px 9px #000000ea;
+    box-shadow: 2px 2px 9px #000000d2;
 }
 
 /*::::::::::::::::::. SECTION STYLES :::::::::::::::::::::*/
@@ -168,7 +168,7 @@ main.section >.cont .crt{
 	transform-origin: 100% 50%;
 	transform-style: preserve-3d;
 	transform: perspective(200px);
-	transition: .4s;
+	transition: .8s;
 }
 main.section > .cont:hover {
     box-shadow: 3px 3px 12px #000000d0;   
@@ -203,4 +203,22 @@ main.section >.cont .date {
     margin-top: 40px;
     font-size: 15px;
     font-weight: 300;
+}
+
+/* :::: MOVIE SECTION :::: */
+
+main.full-movie {
+    width: 100%;
+    height: calc(100vh - 110px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+main.full-movie .cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
 }

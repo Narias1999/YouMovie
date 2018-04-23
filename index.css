@@ -119,7 +119,7 @@ footer .social-link {
 }
 .slide-item>.info h2 {
     color: var(--secondary);
-    text-shadow: 2px 2px 1px #000000db; 
+    text-shadow: 2px 2px 1px #000000d3; 
     font-size: 30px;
 }
 .slide-item>.info>p {
@@ -127,14 +127,18 @@ footer .social-link {
     margin-bottom: 25px;
 }
 .btn {
-    box-shadow: 6px 5px 14px #000000b0;
+    box-shadow: 2px 2px 4px #000000b0;
     padding: 10px 20px;
     text-transform: uppercase;
+    transition: .3s;
     letter-spacing: 1px;
     font-weight: 700;
     background: var(--secondary);
     color: var(--white-text);
     border-radius: 2px;
+}
+.btn:hover {
+    box-shadow: 2px 2px 9px #000000ea;
 }
 
 /*::::::::::::::::::. SECTION STYLES :::::::::::::::::::::*/
@@ -146,35 +150,43 @@ main.section {
     justify-content: center;
     height: calc(100vh - 110px - 94px);
 }
-
-main.section > .cover {
-    border-radius: 3px;
-    overflow: hidden;
-    transition: 1s;
-    position: relative;
+main.section >.cont {
     width: 250px;
     height: 350px;
-    margin: 20px;
-    transform-origin: 100% 50%;
+    position: relative;
+    margin: 15px;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: .5s;
+    background: var(--white-text);
+    box-shadow: 3px 3px 7px #000000b0;
+}
+main.section >.cont .crt{
+    position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-origin: 100% 50%;
 	transform-style: preserve-3d;
 	transform: perspective(200px);
+	transition: .4s;
 }
-main.section > .cover img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+main.section > .cont:hover {
+    box-shadow: 3px 3px 12px #000000d0;   
+}
+main.section > .cont:hover .crt {
+    transform: rotateY(180deg) translateX(100%) !important;
+}
+main.section .front,.back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+main.section .front{
+    background: #000;
     object-fit: cover;
-    backface-visibility: hidden;
 }
-
-main.section > .cover .description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+main.section .back{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -182,9 +194,13 @@ main.section > .cover .description {
     text-align: center;
     padding: 15px;
     background: var(--white-text);
-    /* transform: rotateY(180deg); */
-    /* backface-visibility: hidden; */
+	transform: rotateY(180deg);
 }
-main.section > .cover:hover {
-    transform: rotateY(180deg) translateX(100%);
+main.section >.cont .text {
+    margin: 25px 0;
+}
+main.section >.cont .date {
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: 300;
 }

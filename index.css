@@ -147,12 +147,13 @@ main.section {
     width: 100%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     height: calc(100vh - 110px - 94px);
 }
 main.section >.cont {
-    width: 250px;
-    height: 350px;
+    width: 280px;
+    height: 390px;
     position: relative;
     margin: 15px;
     border-radius: 3px;
@@ -192,12 +193,14 @@ main.section .back{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: 25px;
     background: var(--white-text);
 	transform: rotateY(180deg);
 }
 main.section >.cont .text {
-    margin: 25px 0;
+    margin: 20px 10px;
+    font-size: 14px;
+    text-align: justify;
 }
 main.section >.cont .date {
     margin-top: 40px;
@@ -221,9 +224,16 @@ main.full-movie .cover {
     height: 100%;
     border-radius: 4px;
     object-fit: cover;
+    transition: .5s;
+}
+main.full-movie .cover:hover {
+    transform: scale(1.06);
 }
 main.full-movie .title {
     margin: 20px 0;
+}
+main.full-movie .summary {
+    text-align: justify;
 }
 main.full-movie  .trailer {
     position: relative;
@@ -239,4 +249,31 @@ main.full-movie  .trailer embed {
     left: 0;
     width: 100%;
     height: 100%;
+}
+main.full-movie .secondary>.thumbs{
+    width: 100%;
+    display: grid;
+    height: 50%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 4px;
+}
+main.full-movie .secondary>.thumbs .content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: rebeccapurple;
+}
+main.full-movie .secondary>.thumbs img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+    object-fit: cover;
+}
+main.full-movie .secondary>.thumbs img:hover {
+    transform: scale(1.1);
 }

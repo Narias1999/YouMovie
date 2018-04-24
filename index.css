@@ -209,7 +209,7 @@ main.section >.cont .date {
 
 main.full-movie {
     width: 100%;
-    height: calc(100vh - 110px);
+    min-height: calc(100vh - 110px);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -221,4 +221,22 @@ main.full-movie .cover {
     height: 100%;
     border-radius: 4px;
     object-fit: cover;
+}
+main.full-movie .title {
+    margin: 20px 0;
+}
+main.full-movie  .trailer {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+main.full-movie  .trailer iframe,
+main.full-movie  .trailer object,
+main.full-movie  .trailer embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

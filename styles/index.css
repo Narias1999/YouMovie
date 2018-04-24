@@ -10,6 +10,7 @@
     --white-text: #f5f6fa;
     --secondary: #c23616;
     --preload: #dcdde1;
+    --light-text: #aaa;
 }
 a {
     text-decoration: none;
@@ -221,6 +222,12 @@ main.full-movie {
     grid-gap: 20px;
     padding: 20px;
 }
+main.full-movie a {
+    color: var(--secondary);
+}
+main.full-movie a:hover {
+    text-decoration: underline;
+}
 main.full-movie .cover {
     width: 100%;
     height: 100%;
@@ -233,10 +240,19 @@ main.full-movie .cover:hover {
     transform: scale(1.06);
 }
 main.full-movie .title {
-    margin: 20px 0;
+    line-height: .8em;
+    margin-top: 6px;
+}
+main.full-movie .date {
+    color: var(--light-text);
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 main.full-movie .summary {
     text-align: justify;
+}
+main.full-movie .info {
+    margin: 10px 0;
 }
 main.full-movie  .trailer {
     position: relative;

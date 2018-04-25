@@ -11,6 +11,7 @@
     --secondary: #c23616;
     --preload: #dcdde1;
     --light-text: #aaa;
+    --content-min-height: calc(100vh - 110px);
 }
 a {
     text-decoration: none;
@@ -97,7 +98,7 @@ footer .social-link {
 }
 .home {
     width: 100%;
-    height: calc(100vh - 110px);
+    height: var(--content-min-height);
     position: relative;
     display: flex;
     align-items: center;
@@ -214,7 +215,7 @@ main.section >.cont .date {
 
 main.full-movie {
     width: 100%;
-    min-height: calc(100vh - 110px);
+    min-height: var(--content-min-height);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -325,4 +326,67 @@ main.full-movie .description .directors img {
     height: 71px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+/* :::: SEARCH STYLES ::::: */
+
+main.search {
+    background-image: url('../assets/img/search.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: var(--content-min-height);
+}
+main.search > .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: var(--content-min-height);
+    background: rgba(20, 4, 4, 0.61)
+}
+main.search > .container .text-field {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    max-width: 450px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: rgba(201, 181, 181, 0.774);
+    display: flex;
+    align-items: center;
+}
+main.search > .container input {
+    background: transparent;
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+    width: 90%;
+    color: var(--primary-text);
+    font-size: 1.2em;
+    border: 0;
+    outline: none;
+}
+main.search > .container .placeholder {
+    width: 90%;
+    font-weight: 700;
+    text-align: center;
+}
+main.search > .container .search-icon {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background: var(--primary);
+    color: var(--white-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+main.search .movies {
+    padding: 20px;
+    background: var(--white-text);
+    min-height: 100vh;
+    display: none;
 }

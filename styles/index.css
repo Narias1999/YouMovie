@@ -104,7 +104,6 @@ footer .social-link {
 }
 .slide-item {
     height: 100%;
-    background: var(--preload);
 }
 .home img {
     position: absolute;
@@ -309,4 +308,21 @@ main.full-movie .secondary .actors {
 main.full-movie .secondary .actors .thumbs {
     height: 100%;
     grid-template-rows: 1fr;
+}
+main.full-movie .description .directors {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+main.full-movie .description .info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+main.full-movie .description .directors img {
+    width: 71px;
+    margin-right: 15px;
+    height: 71px;
+    object-fit: cover;
+    border-radius: 50%;
 }

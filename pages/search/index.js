@@ -6,7 +6,7 @@ Vue.component('movie', {
       <p>{{overview}}...</p>
       <div class="actions">
           <h3>{{title}}</h3>
-          <a href="#" class="btn">Ver Más</a>
+          <a @click="$emit('open')" class="btn">Ver Más</a>
       </div>
   </div>
 </div>`
@@ -37,18 +37,22 @@ var app = new Vue({
                 el.sumarizedOverview = el.overview.length < 140 ? el.overview : el.overview.slice(0,140)
                 return el
              })
-             console.log(this.movies)
-             const top = this.$refs.movieSection.offsetTop
-             window.scroll({
-               left:0,
-               top,
-               behavior: 'smooth'
-             })
             } else alert('no se encontroó ninguna película')
           } catch (error) {
             console.error(error)
           }
+          setTimeout(() => {
+            const top = this.$refs.movieSection.offsetTop
+            window.scroll({
+              left:0,
+              top,
+              behavior: 'smooth'
+            })
+          },10)
         } else alert('debes buscar algo')
       },
+      openModal(data) {
+        console.log(data)
+      }
     }
   })

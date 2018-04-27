@@ -134,6 +134,7 @@ footer .social-link {
     padding: 10px 20px;
     text-transform: uppercase;
     transition: .3s;
+    cursor: pointer;
     letter-spacing: 1px;
     font-weight: 700;
     background: var(--secondary);
@@ -462,4 +463,20 @@ main.search .movies .movie .mask .actions a {
     padding: 3px 10px;
     background: var(--primary);
     letter-spacing: 0;
+}
+
+/* :::: UTILS ::: */
+
+.go-up {
+    position: fixed;
+    width: 45px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
 }

@@ -36,13 +36,16 @@
                 </div>
             </div>
         </div>
-        <section ref="movieSection" class="movies" v-if="movies.length">
+        <div class="go-up">
+            <i class="fas fa-angle-up"></i>
+        </div>
+        <section ref="movieSection" class="movies" v-show="movies.length">
             <h2 class="results">{{movies.length}} resultados de la búsqueda {{movie}}</h2>
             <movie v-for="movie in movies"
             :key="movie.id" 
             :imgurl="`${baseIMG}${movie.backdrop_path}`"
             :title="movie.title"
-            :overview="movie.sumarizedOverview"></movie>
+            :overview="movie.sumarizedOverview" @open="openModal(movie)"></movie>
         </section>
     </main>
     <script src="../../js/font-awesome.min.js"></script>    

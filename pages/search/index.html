@@ -30,15 +30,20 @@
         <div class="container">
             <div class="text-field">
                 <input v-model="movie" type="text">
-                <span class="placeholder">¿Que película buscas?</span>
+                <span :class="movie ? 'placeholder' : 'placeholder active'">¿Que película buscas?</span>
                 <div class="search-icon" @click="search">
                     <i class="fas fa-search"></i>
                 </div>
             </div>
         </div>
-        <div class="movies">
-
-        </div>
+        <section ref="movieSection" class="movies" v-if="movies.length">
+            <h2 class="results">{{movies.length}} resultados de la búsqueda {{movie}}</h2>
+            <movie v-for="movie in movies"
+            :key="movie.id" 
+            :imgurl="`${baseIMG}${movie.backdrop_path}`"
+            :title="movie.title"
+            :overview="movie.sumarizedOverview"></movie>
+        </section>
     </main>
     <script src="../../js/font-awesome.min.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

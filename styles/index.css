@@ -368,8 +368,12 @@ main.search > .container input {
 }
 main.search > .container .placeholder {
     width: 90%;
+    display: none;
     font-weight: 700;
     text-align: center;
+}
+main.search > .container .placeholder.active {
+    display: block;
 }
 main.search > .container .search-icon {
     width: 10%;
@@ -385,8 +389,77 @@ main.search > .container .search-icon {
     font-size: 1.2em;
 }
 main.search .movies {
-    padding: 20px;
+    padding: 20px 10%;
     background: var(--white-text);
     min-height: 100vh;
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 100%;
+    grid-gap: 15px;
+}
+main.search .movies .results {
+    padding: 20px 0;
+    grid-column-end: 4;
+    grid-column-start: 1;
+}
+main.search .movies .movie{
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    position: relative;
+    margin: 1%;
+    border-radius: 3px;
+}
+main.search .movies .movie img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main.search .movies .movie:hover .mask{
+    background: rgba(0,0,0,.6);
+    transform: translateY(0);
+}
+main.search .movies .movie:hover .mask p {
+    opacity: 1;
+}
+main.search .movies .movie .mask {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    background: rgba(0,0,0,0);
+    align-items: center;
+    height: 130%;
+    bottom: 0;
+    transform: translateY(100px);
+    transition-property: background, transform;
+    transition-delay: 0s, .2s;
+    transition-duration: .4s, .5s;
+}
+main.search .movies .movie .mask p {
+    padding: 0 25px;
+    margin-top: 60px;
+    color: #fff;
+    opacity: 0;
+    transition: 1s .2s;
+    text-align: justify;
+    height: 136px;
+    overflow: hidden;
+}
+main.search .movies .movie .mask .actions {
+    background: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 10px 12px;
+}
+main.search .movies .movie .mask .actions a {
+    padding: 3px 10px;
+    background: var(--primary);
+    letter-spacing: 0;
 }

@@ -31,7 +31,7 @@ var app = new Vue({
             if(res.results.length) {
              this.movies = res.results
              .filter(el => {
-              return el.backdrop_path && el.overview
+              return el.poster_path && el.overview
              })
              .map(el => {
                 el.sumarizedOverview = el.overview.length < 140 ? el.overview : el.overview.slice(0,140)

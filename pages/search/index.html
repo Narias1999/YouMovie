@@ -17,27 +17,27 @@
             <ul>
                 <div class="cover"></div>
                 <li><a href="../../index.html"><i class="icon fas fa-home"></i><span class="cateory">Inicio</span></a></li>
-                <li><a href="#" class="active"><i class="icon fas fa-fire"></i><span class="cateory">Acción</span></a></li>
+                <li><a href="../accion/index.html"><i class="icon fas fa-fire"></i><span class="cateory">Acción</span></a></li>
                 <li><a href=""><i class="icon fas fa-smile"></i><span class="cateory">Comedia</span></a></li>
                 <li><a href=""><i class="icon fas fa-couch"></i><span class="cateory">Terror</span></a></li>
                 <li><a href=""><i class="icon fas fa-heart"></i><span class="cateory">Romance</span></a></li>
                 <li><a href=""><i class="icon fab fa-fly"></i><span class="cateory">Ciencia Ficción</span></a></li>
-                <li><a href=""><i class="icon fas fa-search"></i><span class="cateory">Otras</span></a></li>
+                <li><a href="" class="active"><i class="icon fas fa-search"></i><span class="cateory">Otras</span></a></li>
             </ul>
         </nav>
     </header>
     <main class="search" id="app">
         <div class="container">
             <div class="text-field">
-                <input type="text">
+                <input v-model="movie" type="text">
                 <span class="placeholder">¿Que película buscas?</span>
-                <div class="search-icon">
+                <div class="search-icon" @click="search">
                     <i class="fas fa-search"></i>
                 </div>
             </div>
         </div>
         <div class="movies">
-            
+
         </div>
     </main>
     <script src="../../js/font-awesome.min.js"></script>    

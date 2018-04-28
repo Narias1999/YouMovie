@@ -302,6 +302,7 @@ main.full-movie .info {
     margin: 10px 0;
 }
 main.full-movie  .trailer {
+    background: var(--preload);
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
@@ -470,6 +471,9 @@ main.search .movies .movie:hover .mask{
 main.search .movies .movie:hover .mask p {
     opacity: 1;
 }
+main.search .movies .movie img {
+    background: var(--preload);
+}
 main.search .movies .movie .mask {
     background: transparent;
     position: absolute;
@@ -563,4 +567,70 @@ main.search .movies .movie .mask .actions a {
     75% { transform: translateX(-100%); }
     95% { transform: translateX(-100%);         }
     100% { transform: translateX(0); }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.774);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal > .close {
+    color: #fff;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+.modal > .close:hover {
+    border: 3px solid var(--secondary);
+    color: var(--secondary);
+}
+.modal > .content {
+    background: var(--white-text);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+}
+.modal > .content img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.modal > .others {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+.modal > .others > div {
+    width: 70px;
+    height: 70px;
+    transition: .3s;
+    cursor: pointer;
+    margin: 5px;
+    border: 2px solid var(--preload);
+}
+.modal > .others > div:hover {
+    border: 2px solid var(--primary);
+}
+.modal > .others > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

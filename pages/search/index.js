@@ -1,3 +1,7 @@
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 200) document.querySelector('.go-up').style.transform = 'scale(1)'
+  else document.querySelector('.go-up').style.transform = 'scale(0)'
+})
 Vue.component('movie', {
   props: ['imgurl', 'overview', 'title'],
   template: `<div class="movie">
@@ -50,6 +54,13 @@ var app = new Vue({
             })
           },10)
         } else alert('debes buscar algo')
+      },
+      goUp () {
+        window.scroll({
+          left:0,
+          top: 0,
+          behavior: 'smooth'
+        })
       },
       openModal(data) {
         console.log(data)

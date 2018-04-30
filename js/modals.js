@@ -9,7 +9,8 @@ if (imageActivators.length) {
         let src = activator.src ? activator.src : activator.querySelector('img').src
         secondaryImages += `<div class="image-content"><img src="${src}"></div>`
         activator.addEventListener('click', (e) => {
-            alert('click en image')
+            modalTeplate.style.display = 'flex'
+            imageElToChange.src = activator.src ? activator.src : activator.querySelector('img').src
         })
     }
     modalTeplate.innerHTML = ` 
@@ -22,7 +23,9 @@ if (imageActivators.length) {
         </div>`
     document.querySelector('body').appendChild(modalTeplate)
     imageElToChange = modalTeplate.querySelector('img.principal')
-    console.log(imageElToChange)
+    document.querySelector('.close').addEventListener('click', () => {
+        modalTeplate.style.display = 'none'
+    })
     const thumbsActivators = modalTeplate.getElementsByClassName('image-content')
     for (const activator of thumbsActivators) {
         activator.addEventListener('click', (e) => {

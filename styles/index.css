@@ -519,16 +519,23 @@ main.search .movies .movie .mask .actions a {
 
 .go-up {
     position: fixed;
-    width: 45px;
+    width: 55px;
     align-items: center;
     justify-content: center;
     display: flex;
-    height: 45px;
-    bottom: 20px;
-    right: 20px;
+    height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+    bottom: 30px;
+    right: 30px;
     background: var(--primary);
     color: #fff;
+    transition: .3s;
     border-radius: 50%;
+    transform: scale(0);
+}
+.go-up:hover {
+    background: rgb(6, 197, 255);
 }
 @keyframes text2 {
     0% { transform: translateY(60px); opacity: 0; }
@@ -576,7 +583,7 @@ main.search .movies .movie .mask .actions a {
     height: 100%;
     background: rgba(0, 0, 0, 0.774);
     z-index: 10;
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -601,17 +608,19 @@ main.search .movies .movie .mask .actions a {
     color: var(--secondary);
 }
 .modal > .content {
-    background: var(--white-text);
     width: 90%;
     max-width: 800px;
-    max-height: 90vh;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
 }
 .modal > .content img {
     top: 0;
     left: 0;
+    align-self: center;
     width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    max-height: 80vh;
+    object-fit: contain;
 }
 .modal > .others {
     display: flex;
@@ -633,4 +642,7 @@ main.search .movies .movie .mask .actions a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.image-modal {
+    cursor: pointer;
 }

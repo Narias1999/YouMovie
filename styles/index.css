@@ -646,3 +646,44 @@ main.search .movies .movie .mask .actions a {
 .image-modal {
     cursor: pointer;
 }
+.modal.actors {
+    background: rgba(0, 4, 12, 1);
+    display: flex;
+    cursor: pointer;
+    transition: .4s;
+    justify-content: flex-end;
+}
+.modal.actors:hover {
+    background: rgba(0, 4, 12, 0.9);    
+}
+.modal.actors > .content {
+    border-radius: 1px;
+    position: relative;
+    background: var(--white-text);
+    min-height: 70vh;
+}
+.modal.actors > .content img {
+    width: 230px;
+    height: 340px;
+    object-fit: cover;
+    left: 50px;
+    border-radius: 2px;
+    top: -130px;
+    position: absolute;
+}
+.modal.actors > .content > .description {
+    position: absolute;
+    width: 65%;
+    right: 0;
+    padding: 30px;
+}
+.modal.actors > .content h2 {
+    display: flex;
+    align-items: center;
+}
+.modal.actors > .content .nacionality {
+    position: static;
+    margin-left: 10px;
+    width: 40px;
+    height: auto;
+}

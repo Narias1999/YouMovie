@@ -659,6 +659,7 @@ main.search .movies .movie .mask .actions a {
 .modal.actors > .content {
     border-radius: 1px;
     position: relative;
+    display: block;
     background: var(--white-text);
     min-height: 70vh;
 }
@@ -672,9 +673,9 @@ main.search .movies .movie .mask .actions a {
     position: absolute;
 }
 .modal.actors > .content > .description {
-    position: absolute;
+    position: relative;
     width: 65%;
-    right: 0;
+    margin-left: 35%;
     padding: 30px;
 }
 .modal.actors > .content h2 {
@@ -686,4 +687,11 @@ main.search .movies .movie .mask .actions a {
     margin-left: 10px;
     width: 40px;
     height: auto;
+}
+.modal.actors .biography {
+    padding: 30px 50px;
+}
+.modal.actors .biography p {
+    margin-top: 20px;
+    text-align: justify
 }

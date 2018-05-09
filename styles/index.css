@@ -647,8 +647,9 @@ main.search .movies .movie .mask .actions a {
     cursor: pointer;
 }
 .modal.actors {
+    overflow-y: scroll;
     background: rgba(0, 4, 12, 1);
-    display: flex;
+    /* display: flex; */
     cursor: pointer;
     transition: .4s;
     justify-content: flex-end;
@@ -661,7 +662,7 @@ main.search .movies .movie .mask .actions a {
     position: relative;
     display: block;
     background: var(--white-text);
-    min-height: 70vh;
+    min-height: 480px;
 }
 .modal.actors > .content img {
     width: 230px;

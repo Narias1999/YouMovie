@@ -74,12 +74,10 @@ nav>ul>li>a>.icon {
     margin-bottom: 10px;
 }
 footer {
-    position: absolute;
-    bottom: 0;
     padding: 20px 60px;
     display: flex;
     align-items: center;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, 0.76);
     color: var(--white-text);
     width: 100%;
     z-index: 40;
@@ -190,7 +188,38 @@ footer .social-link {
 .btn:hover {
     box-shadow: 2px 2px 9px #000000d2;
 }
-
+section.main-movies {
+    display: grid;
+    width: 1000px;
+    margin: 60px auto;
+    max-width: 100%;
+    grid-gap: 10px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+section.main-movies > a > div {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+section.main-movies > a:hover .info {
+    padding: 90px 20px 20px 20px;
+}
+section.main-movies > a .info {
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    background: linear-gradient(transparent, #000000f5);
+    bottom: 0;
+    transition: .5s;
+    padding: 60px 20px 20px 20px;
+}
+section.main-movies img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
 /*::::::::::::::::::. SECTION STYLES :::::::::::::::::::::*/
 
 main.section {

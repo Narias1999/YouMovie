@@ -215,17 +215,14 @@ section.main-movies h1 {
     grid-column-start: 1;
     grid-column-end: 3;
 }
-section.main-movies > a:hover .info {
-    padding: 100px 20px 20px 20px;
-}
 section.main-movies > a .info {
     position: absolute;
     color: #fff;
     width: 100%;
-    background: linear-gradient(transparent, #000000f5);
+    background: #000000ad;
     bottom: 0;
     transition: .5s;
-    padding: 75px 20px 20px 20px;
+    padding: 20px;
 }
 section.main-movies > a:hover img {
     transform: scale(1.1);
@@ -261,71 +258,6 @@ section.overlay h1 {
     font-size: 60px;
     text-transform: uppercase;
 }
-main.section {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100vh;
-}
-main.section >.cont {
-    width: 280px;
-    height: 390px;
-    position: relative;
-    margin: 15px;
-    border-radius: 3px;
-    overflow: hidden;
-    transition: .5s;
-    background: var(--white-text);
-    box-shadow: 3px 3px 7px #000000b0;
-}
-main.section >.cont .crt{
-    position: absolute;
-	width: 100%;
-	height: 100%;
-	transform-origin: 100% 50%;
-	transform-style: preserve-3d;
-	transform: perspective(200px);
-	transition: .8s;
-}
-main.section > .cont:hover {
-    box-shadow: 3px 3px 12px #000000d0;   
-}
-main.section > .cont:hover .crt {
-    transform: rotateY(180deg) translateX(100%) !important;
-}
-main.section .front,.back{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-}
-main.section .front{
-    background: #000;
-    object-fit: cover;
-}
-main.section .back{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 25px;
-    background: var(--white-text);
-	transform: rotateY(180deg);
-}
-main.section >.cont .text {
-    margin: 20px 10px;
-    font-size: 14px;
-    text-align: justify;
-}
-main.section >.cont .date {
-    margin-top: 40px;
-    font-size: 15px;
-    font-weight: 300;
-}
-
 /* :::: MOVIE SECTION :::: */
 
 main.full-movie {

@@ -200,7 +200,7 @@ section.main-movies {
     width: 1000px;
     margin: 60px auto;
     max-width: 100%;
-    grid-gap: 10px;
+    grid-gap: 15px;
     align-items: center;
     grid-template-columns: 1fr 1fr;
 }
@@ -216,7 +216,7 @@ section.main-movies h1 {
     grid-column-end: 3;
 }
 section.main-movies > a:hover .info {
-    padding: 90px 20px 20px 20px;
+    padding: 100px 20px 20px 20px;
 }
 section.main-movies > a .info {
     position: absolute;
@@ -225,7 +225,7 @@ section.main-movies > a .info {
     background: linear-gradient(transparent, #000000f5);
     bottom: 0;
     transition: .5s;
-    padding: 50px 20px 20px 20px;
+    padding: 75px 20px 20px 20px;
 }
 section.main-movies > a:hover img {
     transform: scale(1.1);

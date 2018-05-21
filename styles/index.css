@@ -96,14 +96,6 @@ footer .info-dev {
     align-items: center;
     justify-content: center;
 }
-footer .info-dev>.links {
-    margin-top: 10px;
-}
-footer .social-link {
-    color: var(--white-text);
-    font-size: 20px;
-    margin: 0 5px;
-}
 .home {
     width: 100%;
     height: var(--content-min-height);
@@ -695,4 +687,36 @@ main.search .movies .movie .mask .actions a {
 .modal.actors .biography p {
     margin-top: 20px;
     text-align: justify
+}
+.social-media {
+    transition: .6s;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -50px;
+    top: calc(50% - 90px);
+}
+.social-media a {
+    align-self: flex-start;
+    color:  #fff;
+    cursor: pointer;
+    min-width: 44px;
+    padding: 10px 13px;
+    background: #000;
+    transition: .5s;
+}
+.social-media a:nth-child(1) {
+    background: #2c3e50;
+}
+.social-media a:nth-child(2) {
+    background: #0e3663;
+}
+.social-media a:nth-child(3) {
+    background: #3498db;
+}
+.social-media a:nth-child(4) {
+    background: #8e44ad;
+}
+.social-media a:hover {
+    padding-left: 40px;
 }

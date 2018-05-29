@@ -16,40 +16,59 @@
         </figure>
         <nav>
             <ul>
-                <div class="cover"></div>
-                <li><a href="../../index.html"><i class="icon fas fa-home"></i><span class="cateory">Inicio</span></a></li>
-                <li><a href="index.html" class="active"><i class="icon fas fa-fire"></i><span class="cateory">Acción</span></a></li>
-                <li><a href=""><i class="icon fas fa-smile"></i><span class="cateory">Comedia</span></a></li>
-                <li><a href=""><i class="icon fas fa-couch"></i><span class="cateory">Terror</span></a></li>
-                <li><a href=""><i class="icon fas fa-heart"></i><span class="cateory">Romance</span></a></li>
-                <li><a href=""><i class="icon fab fa-fly"></i><span class="cateory">Ciencia Ficción</span></a></li>
-                <li><a href="../search/index.html"><i class="icon fas fa-search"></i><span class="cateory">Otras</span></a></li>
+                <li><a href="../../index.html"><span class="cateory">Inicio</span></a></li>
+                <li><a href="index.html" class="active"><span class="cateory">Acción</span></a></li>
+                <li><a href=""><span class="cateory">Comedia</span></a></li>
+                <li><a href=""><span class="cateory">Terror</span></a></li>
+                <li><a href=""><span class="cateory">Romance</span></a></li>
+                <li><a href=""><span class="cateory">Ciencia Ficción</span></a></li>
+                <li><a href="../search/index.html"><span class="cateory">Otras</span></a></li>
             </ul>
         </nav>
     </header>
-    <main class="full-movie">
+    <section class="overlay">
+        <img src="../../assets/img/infinity.png" alt="">
+        <h1 universe="MCU">Avengers Infinity War</h1>
+    </section>
+    <section class="description">
+        <p class="text">Los Vengadores y los Guardianes de la Galaxia deben estar dispuestos a sacrificar todo en un intento de derrotar al poderoso Thanos antes de que su bombardeo de devastación y ruina ponga fin a la mitad del universo.</p>
+        <span class="date">25 de Abril del 2018</span>
+        <p><a href="index.html">Acción</a> | Aventura | <a href="../cienciaFiccion/index.html">Ciencia Ficción</a></p>
+        <div class="info">
+            <div class="c100 p85 big">
+                <span>Score<br>8.5/10</span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+            </div>
+            <div class="directors">
+                <img src="../../assets/img/directors/AnthonyRusso.jpg">
+                <div class="data">
+                    <h4>Directores</h4>
+                    <p>Hermanos Anthony y Joe Russo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="actors">
+        <h2>Reparto</h2>
+        <div class="thumbs">
+            <div class="content info-modal" title="Robert Downey Jr">
+                <img src="../../assets/img/actors/RobertDowney.jpg">
+            </div>
+            <div class="content info-modal" title="Scarlett Johansson">
+                <img src="../../assets/img/actors/ScarlettJohansson.jpg">
+            </div>
+            <div class="content info-modal" title="Chris Evans">
+                <img src="../../assets/img/actors/ChrisEvans.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="trailer-thumbs">
         <img class="cover image-modal" src="../../assets/img/caratulas/avengers.jpg" alt="">
         <section class="description">
-            <h1 class="title" universe="MCU">Avengers Infinity War</h1>
-            <span class="date">25 de Abril del 2018</span>
-            <p class="summary">Los Vengadores y los Guardianes de la Galaxia deben estar dispuestos a sacrificar todo en un intento de derrotar al poderoso Thanos antes de que su bombardeo de devastación y ruina ponga fin a la mitad del universo.</p>
-            <div class="info">
-                <div class="c100 p85 big">
-                    <span>Score<br>8.5/10</span>
-                    <div class="slice">
-                        <div class="bar"></div>
-                        <div class="fill"></div>
-                    </div>
-                </div>
-                <div class="directors">
-                    <img src="../../assets/img/directors/AnthonyRusso.jpg">
-                    <div class="data">
-                        <h4>Directores</h4>
-                        <p>Hermanos Anthony y Joe Russo</p>
-                    </div>
-                </div>
-                <p><b>Géneros: </b> <a href="index.html">Acción</a> | Aventura | <a href="../cienciaFiccion/index.html">Ciencia Ficción</a></p>
-            </div>
+            <p class="summary"></p>
             <div class="trailer">
                 <iframe width="640" height="340" src="https://www.youtube.com/embed/QbNdocPMT9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
@@ -63,22 +82,8 @@
                 <div class="content image-modal"><img src="../../assets/img/thumbs/infinity/5.jpg" alt=""></div>
                 <div class="content image-modal"><img src="../../assets/img/thumbs/infinity/6.png" alt=""></div>
             </div>
-            <div class="actors">
-                <h2>Reparto</h2>
-                <div class="thumbs">
-                    <div class="content info-modal" title="Robert Downey Jr">
-                        <img src="../../assets/img/actors/RobertDowney.jpg">
-                    </div>
-                    <div class="content info-modal" title="Scarlett Johansson">
-                        <img src="../../assets/img/actors/ScarlettJohansson.jpg">
-                    </div>
-                    <div class="content info-modal" title="Chris Evans">
-                        <img src="../../assets/img/actors/ChrisEvans.jpg">
-                    </div>
-                </div>
-            </div>
        </section>
-    </main>
+    </section>
     <script src="../../js/font-awesome.min.js"></script>    
     <script src="../../js/modals.js"></script>
 </body>

@@ -72,7 +72,7 @@ nav>ul>li>a {
     flex-direction: column;
 }
 nav>ul>li>a:hover {
-    color: var(--primary-text);
+    color: var(--secondary);
 }
 nav>ul>li>a.active {
     color: var(--secondary);
@@ -282,10 +282,10 @@ section.overlay h1 {
 .thumbs{
     width: 100%;
     display: grid;
-    height: 50%;
+    height: 100%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2,1fr);
-    grid-gap: 4px;
+    grid-gap: 0;
 }
 .thumbs .content {
     width: 100%;
@@ -307,13 +307,25 @@ section.overlay h1 {
     transform: scale(1.1);
 }
 section.actors {
+    background: var(--white-text);
     width: 100%;
     display: grid;
     align-items: center;
-    height: 50%;
+    min-height: 700px;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px 1fr;
-    grid-gap: 4px;
+    grid-template-rows: auto 1fr;
+}
+section.actors .thumbs {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+section.actors h2 {
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    padding: 20px 0;
 }
 section.movie-description a {
     color: var(--secondary);
@@ -335,7 +347,7 @@ section.movie-description .date {
     font-size: 14px;
     color: var(--light-text);
     display: block;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 section.movie-description .info {
     display: flex;
@@ -348,6 +360,12 @@ section.movie-description .text {
     font-style: italic;
     width: 850px;
     max-width: 90%;
+}
+section.trailer-thumbs {
+    padding: 80px 40px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
 }
 /* :::: SEARCH STYLES ::::: */
 

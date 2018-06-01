@@ -11,6 +11,22 @@ if (imageActivators.length) {
         secondaryImages += `<div class="image-content"><img src="${src}"></div>`
         activator.addEventListener('click', (e) => {
             modalTeplate.style.display = 'flex'
+            setTimeout(() => {
+                modalTeplate.style.opacity = 1            
+            }, 3)
+            const buttons = modalTeplate.querySelectorAll('.image-content')
+            let time = 0
+            for (const btn of buttons) {
+                setTimeout(() => {
+                    btn.style.opacity = 1
+                    btn.style.transform = 'translateY(0)'
+                }, time)
+                time += 200
+            }
+            setTimeout(() => {
+                imageElToChange.style.opacity = 1
+                imageElToChange.style.transform = 'scale(1)'
+            }, 200)
             imageElToChange.src = activator.src ? activator.src : activator.querySelector('img').src
         })
     }
@@ -25,7 +41,25 @@ if (imageActivators.length) {
     document.querySelector('body').appendChild(modalTeplate)
     imageElToChange = modalTeplate.querySelector('img.principal')
     document.querySelector('.close').addEventListener('click', () => {
-        modalTeplate.style.display = 'none'
+        setTimeout(() => {
+            imageElToChange.style.opacity = 0
+            imageElToChange.style.transform = 'scale(.3)'
+        }, 400)
+        const buttons = modalTeplate.querySelectorAll('.image-content')
+        let time = 0
+        for (const btn of buttons) {
+            setTimeout(() => {
+                btn.style.opacity = 0
+                btn.style.transform = 'translateY(-40px)'
+            }, time)
+            time += 200
+        }
+        setTimeout(() => {
+            modalTeplate.style.opacity = 0
+        }, 1200)
+        setTimeout(() => {
+            modalTeplate.style.display = 'none'
+        }, 1500)
     })
     const thumbsActivators = modalTeplate.getElementsByClassName('image-content')
     for (const activator of thumbsActivators) {
@@ -45,6 +79,19 @@ if (infoActivators.length) {
             movies: {
                 MCU: {
                     character: 'Natasha Romanoff (La viuda negra).',
+                    description: 'Viuda Negra, cuyo nombre real es Natalia Alianovna Romanova, mejor conocida como Natasha Romanoff es una superheroína ficticia que pertenece a Marvel Comics. Dentro del Universo Marvel hay varias viudas negras, todas ellas pertenecen o han pertenecido a una organización espía rusa. La más importante es Natasha Romanoff, que ya abandonó el grupo, para ejercer de agente de inteligencia y espionaje en organizaciones como S.H.I.E.L.D. y convertirse en una de las superheroínas más letales, al formar miembro del equipo de superhéroes, Los Vengadores.'
+                }
+            }
+        },
+        JoshBrolin: {
+            height: '1.78 m.',
+            age: '50 años.',
+            bornCity: 'Santa Mónica, California.',
+            nacionality: 'usa',
+            image: 'JoshBrolin.jpg',
+            movies: {
+                MCU: {
+                    character: 'Thanos.',
                     description: 'Viuda Negra, cuyo nombre real es Natalia Alianovna Romanova, mejor conocida como Natasha Romanoff es una superheroína ficticia que pertenece a Marvel Comics. Dentro del Universo Marvel hay varias viudas negras, todas ellas pertenecen o han pertenecido a una organización espía rusa. La más importante es Natasha Romanoff, que ya abandonó el grupo, para ejercer de agente de inteligencia y espionaje en organizaciones como S.H.I.E.L.D. y convertirse en una de las superheroínas más letales, al formar miembro del equipo de superhéroes, Los Vengadores.'
                 }
             }

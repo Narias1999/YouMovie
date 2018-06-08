@@ -1,12 +1,4 @@
-function isInspectOpen()
-{
-    console.profile(); 
-    console.profileEnd(); 
-    if (console.clear) console.clear();
-    return console.profiles.length > 0;
-}
 window.addEventListener('scroll', () => {
-  console.log(isInspectOpen())
   if(window.scrollY > 200) document.querySelector('.go-up').style.transform = 'scale(1)'
   else document.querySelector('.go-up').style.transform = 'scale(0)'
 })

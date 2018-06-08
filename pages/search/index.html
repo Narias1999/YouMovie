@@ -43,7 +43,7 @@
             <h2 class="results">{{movies.length}} resultados de la búsqueda {{movie}}</h2>
             <movie v-for="movie in movies"
             :key="movie.id" 
-            :imgurl="`${baseIMG}${movie.poster_path}`"
+            :imgurl="`${baseIMG}${movie.backdrop_path}`"
             :title="movie.title"
             :overview="movie.sumarizedOverview" @open="openModal(movie)"></movie>
         </section>

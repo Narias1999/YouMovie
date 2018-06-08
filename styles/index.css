@@ -457,7 +457,7 @@ section.trailer-thumbs {
 /* :::: SEARCH STYLES ::::: */
 
 main.search {
-    background-image: url('../assets/img/search.jpg');
+    background-image: url('../assets/img/covers/search.jpg');
     background-size: cover;
     background-attachment: fixed;
     min-height: var(--content-min-height);

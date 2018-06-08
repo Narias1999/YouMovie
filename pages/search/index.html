@@ -29,7 +29,7 @@
     <main class="search" id="app">
         <div class="container">
             <div class="text-field">
-                <input v-model="movie" type="text">
+                <input v-model="movie" @keyup.enter="search" type="text">
                 <span :class="movie ? 'placeholder' : 'placeholder active'">¿Que película buscas?</span>
                 <div class="search-icon" @click="search">
                     <i class="fas fa-search"></i>

@@ -1,7 +1,16 @@
+function isInspectOpen()
+{
+    console.profile(); 
+    console.profileEnd(); 
+    if (console.clear) console.clear();
+    return console.profiles.length > 0;
+}
 window.addEventListener('scroll', () => {
+  console.log(isInspectOpen())
   if(window.scrollY > 200) document.querySelector('.go-up').style.transform = 'scale(1)'
   else document.querySelector('.go-up').style.transform = 'scale(0)'
 })
+
 Vue.component('movie', {
   props: ['imgurl', 'overview', 'title'],
   template: `<div class="movie">
@@ -32,6 +41,7 @@ var app = new Vue({
             const API_KEY = '5145398a1f237d870d5d1de9074e1220'
             let res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${API_KEY}&language=es`)
             res = await res.json()
+            console.log(res)
             if(res.results.length) {
              this.movies = res.results
              .filter(el => {

@@ -92,7 +92,7 @@ if (infoActivators.length) {
             movies: {
                 MCU: {
                     character: 'Thanos.',
-                    description: 'Viuda Negra, cuyo nombre real es Natalia Alianovna Romanova, mejor conocida como Natasha Romanoff es una superheroína ficticia que pertenece a Marvel Comics. Dentro del Universo Marvel hay varias viudas negras, todas ellas pertenecen o han pertenecido a una organización espía rusa. La más importante es Natasha Romanoff, que ya abandonó el grupo, para ejercer de agente de inteligencia y espionaje en organizaciones como S.H.I.E.L.D. y convertirse en una de las superheroínas más letales, al formar miembro del equipo de superhéroes, Los Vengadores.'
+                    description: 'Thanos, también conocido como Señor Oscuro por sus más fieles subordinados y apodado como Titán Loco por las comunidades galácticas, es un guerrero poderoso que gobierna sobre una lejana región del espacio y comanda un ejército masivo conocido como los Chitauri. Su objetivo principal es la obtención de las Gemas del Infinito, y su deseo de lograr este objetivo le llevó a forjar acuerdos con los villanos Loki y Ronan en sus respectivas campañas contra la Tierra y Xandar. Ambas alianzas le costaron a Thanos gran parte de sus recursos como la pérdida de una gema, El Otro, la lealtad de sus dos hijas, Gamora y Nebula, e inadvertidamente dio lugar a la formación de grupos conocidos como los Vengadores y los Guardianes de la Galaxia. Finalmente, perdió la paciencia con sus siervos, y optó por buscar las gemas personalmente.'
                 }
             }
         },
@@ -121,6 +121,19 @@ if (infoActivators.length) {
                     description: 'El Capitán Rogers fue el único sobreviviente de la prueba del Suero del Súper Soldado desarrollado por Abraham Erskine. Transformado en la encarnación de la perfección fisiológica humana, el super soldado patriota recibió el título de Capitán América y luchó contra HYDRA. Rogers estuvo congelado durante casi setenta años y despertó en el siglo XXI, donde se unió a Los Vengadores.<br>El suero le ha permitido ser más que humano. En general, Rogers posee notable fuerza, velocidad, agilidad, resistencia, reflejos, durabilidad y capacidad regenerativa extraordinarias. Además, él es un agente altamente capacitado, entrenado en varias formas de combate cuerpo a cuerpo, armas y otras habilidades debido a su experiencia durante la Segunda Guerra Mundial que aún en estos tiempos lo hace eficaz en la batalla.'
                 }
             }
+        },
+        ChrisPratt: {
+            height: '1.88 m.',
+            age: '38 años.',
+            bornCity: 'Virginia, Minnesota.',
+            nacionality: 'usa',
+            image: 'ChrisPratt.jpg',
+            movies: {
+                MCU: {
+                    character: 'Star Lord (Peter Quill).',
+                    description: 'Star Lord (Peter Quill) es un personaje ficticio, un superhéroe que aparece en los cómics publicados por Marvel Comics. Creado por Steve Englehart y Steve Gan, el personaje apareció por primera vez en Marvel Preview #4 (Enero de 1976). Siendo el hijo de una humana, Meredtih Quill, y un spartoi, J´son, Quill asume el manto de Star-Lord, un policía interplanetario. Sin embargo, con el paso de los años han hecho nuevas versiones de sus orígenes.'
+                }
+            }
         }
     }
     const modalActorsTemplate = document.createElement('div')
@@ -142,11 +155,14 @@ if (infoActivators.length) {
     </div>`
     document.querySelector('body').appendChild(modalActorsTemplate)
     modalActorsTemplate.addEventListener('click', e => {
-        modalActorsTemplate.style.display = 'none'
+        modalActorsTemplate.style.opacity = 0
+        setTimeout(() => {
+            modalActorsTemplate.style.display = 'none'
+        }, 400)
     })
     for (const activator of infoActivators)
     activator.addEventListener('click', e => {
-        const name = activator.title
+        const name = activator.querySelector('span').innerHTML
         const characterData = actorsData[name.split(' ').join('')]
         const movieData = characterData.movies[movieTitle.split(' ').join('')]
         modalActorsTemplate.querySelector('#name').innerHTML = name
@@ -158,5 +174,8 @@ if (infoActivators.length) {
         modalActorsTemplate.querySelector('.description h3').innerHTML = movieData.character
         modalActorsTemplate.querySelector('.biography p').innerHTML = movieData.description
         modalActorsTemplate.style.display = 'flex'
+        setTimeout(() => {
+            modalActorsTemplate.style.opacity = 1
+        }, 1)
     })
 }

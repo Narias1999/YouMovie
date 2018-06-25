@@ -438,7 +438,7 @@ section.movie-description .date {
 }
 section.movie-description .info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 450px;
     padding: 20px 0;
     max-width: 90%;

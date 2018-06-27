@@ -11,7 +11,6 @@ Vue.component('movie', {
       <p>{{overview}}...</p>
       <div class="actions">
           <h3>{{title}}</h3>
-          <a @click="$emit('open')" class="btn">Ver Más</a>
       </div>
   </div>
 </div>`
@@ -43,7 +42,10 @@ var app = new Vue({
                 el.sumarizedOverview = el.overview.length < 140 ? el.overview : el.overview.slice(0,140)
                 return el
              })
-            } else alert('no se encontroó ninguna película')
+            } else {
+              this.movies = []
+              alert('No se encontró ninguna película')
+            }
           } catch (error) {
             console.error(error)
           }

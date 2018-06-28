@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
 
 Vue.component('movie', {
   props: ['imgurl', 'overview', 'title'],
-  template: `<div class="movie">
+  template: `<div class="movie" @click="$emit('show')">
   <img :src=imgurl>
   <div class="mask">
       <p>{{overview}}...</p>
@@ -21,9 +21,15 @@ var app = new Vue({
       movies: [],
       movie: null,
       baseIMG: 'https://image.tmdb.org/t/p/w500',
-      baseTrailer: 'https://www.youtube.com/embed'
+      baseTrailer: 'https://www.youtube.com/embed',
+      selectedMovie: {}
     },
     methods: {
+      showModal(selected) {
+        this.selectedMovie = selected
+        const modalEl = this.$refs.modal
+        modalEl.style.display = "flex"
+      },
       async search () {
         if(this.movie) {
           let search = this.movie.toLowerCase()
@@ -42,6 +48,7 @@ var app = new Vue({
                 el.sumarizedOverview = el.overview.length < 140 ? el.overview : el.overview.slice(0,140)
                 return el
              })
+             console.log(this.movies)
             } else {
               this.movies = []
               alert('No se encontró ninguna película')

@@ -42,14 +42,30 @@
         <section ref="movieSection" class="movies" v-show="movies.length">
             <h2 class="results">{{movies.length}} resultados de la búsqueda {{movie}}</h2>
             <movie v-for="movie in movies"
-            :key="movie.id" 
+            @show=showModal(movie)
+            :movie=movie
+            :key="movie.id"
             :imgurl="`${baseIMG}${movie.backdrop_path}`"
             :title="movie.title"
             :overview="movie.sumarizedOverview" @open="openModal(movie)"></movie>
         </section>
+        <section ref="modal" class="modal search-movie">
+            <div class="content">
+                <h1><span>{{selectedMovie.original_title}}</span> <img class="nacionality"></h1>
+                <img :src=`${baseIMG}${selectedMovie.backdrop_path}`>
+                <div>
+                    <h3>Sinopsis</h3>
+                    <p>{{selectedMovie.overview}}</p>
+                </div>
+                <div class="description">
+                    <p><strong>Fecha de lanzamiento: </strong><span>{{selectedMovie.release_date}}</span></p>
+                    <p><strong>Popularidad: </strong><span>{{selectedMovie.popularity}}</span></p>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="../../js/font-awesome.min.js"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../../js/vue.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

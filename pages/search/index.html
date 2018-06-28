@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>YouMovie | Otras</title>
-    <link rel="stylesheet" href="../../styles/index.css">    
+    <link rel="stylesheet" href="../../styles/index.css">
+    <style>.loader,.loader:after,.loader:before{background:#fff;-webkit-animation:load1 1s infinite ease-in-out;animation:load1 1s infinite ease-in-out;width:1em;height:4em}.loader{color:#fff;text-indent:-9999em;margin:88px auto;position:relative;font-size:11px;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);-webkit-animation-delay:-.16s;animation-delay:-.16s}.loader:after,.loader:before{position:absolute;top:0;content:''}.loader:before{left:-1.5em;-webkit-animation-delay:-.32s;animation-delay:-.32s}.loader:after{left:1.5em}@-webkit-keyframes load1{0%,100%,80%{box-shadow:0 0;height:4em}40%{box-shadow:0 -2em;height:5em}}@keyframes load1{0%,100%,80%{box-shadow:0 0;height:4em}40%{box-shadow:0 -2em;height:5em}}</style>
 </head>
 <body>
     <header>
@@ -45,24 +46,27 @@
             @show=showModal(movie)
             :movie=movie
             :key="movie.id"
-            :imgurl="`${baseIMG}${movie.backdrop_path}`"
+            :imgurl="`${baseIMG}${movie.poster_path}`"
             :title="movie.title"
             :overview="movie.sumarizedOverview" @open="openModal(movie)"></movie>
         </section>
-        <section ref="modal" class="modal search-movie">
+        <section ref="modal" class="modal search-movie" @click=closeModal>
             <div class="content">
-                <h1><span>{{selectedMovie.original_title}}</span> <img class="nacionality"></h1>
-                <img :src=`${baseIMG}${selectedMovie.backdrop_path}`>
-                <div>
-                    <h3>Sinopsis</h3>
-                    <p>{{selectedMovie.overview}}</p>
+                <div class="cover">
+                    <img :src=`${baseIMG}${selectedMovie.backdrop_path}`>
+                    <h1>{{selectedMovie.title}}</h1>
                 </div>
                 <div class="description">
-                    <p><strong>Fecha de lanzamiento: </strong><span>{{selectedMovie.release_date}}</span></p>
-                    <p><strong>Popularidad: </strong><span>{{selectedMovie.popularity}}</span></p>
+                    <p>{{selectedMovie.overview}}</p>
+                    <br>
+                    <p><strong>Fecha de lanzamiento: </strong>{{selectedMovie.release_date}}</p>
+                    <p><strong>Popularidad: </strong>{{selectedMovie.popularity}}</p>
                 </div>
             </div>
         </section>
+        <div ref="loader" class="loader-parent">
+            <div class="loader"></div>
+        </div>
     </main>
     <script src="../../js/font-awesome.min.js"></script>    
     <script src="../../js/vue.min.js"></script>

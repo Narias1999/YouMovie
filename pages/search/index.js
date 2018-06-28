@@ -30,7 +30,11 @@ var app = new Vue({
         const modalEl = this.$refs.modal
         modalEl.style.display = "flex"
       },
+      closeModal() {
+        this.$refs.modal.style.display = "none"
+      },
       async search () {
+        this.$refs.loader.style.display = 'flex'
         if(this.movie) {
           let search = this.movie.toLowerCase()
           search = search.split(' ').join('+')
@@ -56,6 +60,7 @@ var app = new Vue({
           } catch (error) {
             console.error(error)
           }
+          this.$refs.loader.style.display = 'none'
           setTimeout(() => {
             const top = this.$refs.movieSection.offsetTop
             window.scroll({
@@ -72,9 +77,6 @@ var app = new Vue({
           top: 0,
           behavior: 'smooth'
         })
-      },
-      openModal(data) {
-        console.log(data)
       }
     }
   })

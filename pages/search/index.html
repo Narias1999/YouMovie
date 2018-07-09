@@ -41,7 +41,7 @@
             <i class="fas fa-angle-up"></i>
         </div>
         <section ref="movieSection" class="movies" v-show="movies.length">
-            <h2 class="results">{{movies.length}} resultados de la búsqueda {{movie}}</h2>
+            <h2 class="results">{{movies.length}} resultados de la búsqueda <span ref="selectedMovie"></span> </h2>
             <movie v-for="movie in movies"
             @show=showModal(movie)
             :movie=movie
@@ -68,6 +68,7 @@
             <div class="loader"></div>
         </div>
     </main>
+    <script src="../../js/swal.js"></script>
     <script src="../../js/font-awesome.min.js"></script>    
     <script src="../../js/vue.min.js"></script>
     <script src="index.js"></script>

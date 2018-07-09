@@ -42,7 +42,6 @@ var app = new Vue({
             const API_KEY = '5145398a1f237d870d5d1de9074e1220'
             let res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${API_KEY}&language=es`)
             res = await res.json()
-            console.log(res)
             if(res.results.length) {
              this.movies = res.results
              .filter(el => {
@@ -52,15 +51,25 @@ var app = new Vue({
                 el.sumarizedOverview = el.overview.length < 140 ? el.overview : el.overview.slice(0,140)
                 return el
              })
-             console.log(this.movies)
             } else {
               this.movies = []
-              alert('No se encontró ninguna película')
+              swal({
+                type: 'error',
+                title: 'Oops... :(',
+                text: 'No encontramos ninguna película con ese nombre.',
+              })
             }
           } catch (error) {
+            swal({
+              type: 'error',
+              title: 'Oops... :(',
+              text: 'Algo falló.',
+            })
+            this.movies = []
             console.error(error)
           }
           this.$refs.loader.style.display = 'none'
+          this.$refs.selectedMovie.innerHTML = this.movie
           setTimeout(() => {
             const top = this.$refs.movieSection.offsetTop
             window.scroll({
